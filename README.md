@@ -1,113 +1,35 @@
-# Portfolio V5  
-Hello everyone!  
-Let me introduce myself, I’m Eki Zulfar Rachman. On this occasion, I’d like to share the portfolio website project that I’ve developed.  
+Harshad Patil - Personal Portfolio
+Welcome to the official repository for my personal portfolio website. This project is a modern, fully responsive single-page application built with React and Vite, showcasing my projects, certifications, and professional experience. It features a sleek "Deep Ocean Blue & Cyan" theme and is powered by a Supabase backend for dynamic content management.
 
-**Tech Stack used:**  
-- ReactJS  
-- Tailwind CSS  
-- AOS  
-- Firebase  
-- Framer Motion  
-- Lucide  
-- Material UI  
-- SweetAlert2  
+Live Demo: portfolio-harshad.vercel.app
 
-**Website Link:**  
-[https://www.eki.my.id/](https://www.eki.my.id/)  
+✨ Features
+Sleek & Modern UI: A custom-designed "Deep Ocean Blue & Cyan" theme for a unique and professional look.
+Fully Responsive: Adapts beautifully to all screen sizes, from mobile phones to desktop monitors.
+Dynamic Content: Projects, certificates, and experience are all fetched in real-time from a Supabase backend, allowing for easy updates without changing any code.
+Interactive Project Pages: Each project has a dedicated details page with a clean, focused layout.
+Real-time Comment Section: A public comment section on the contact page that updates instantly for all users.
+Functional Contact Form: An integrated contact form that securely sends messages to my email using FormSubmit.
+Engaging Animations: Smooth animations and transitions throughout the site, including a welcome screen, scroll-triggered effects (AOS), and interactive UI elements.
 
-We would appreciate it if you decide to use this project. Please include credit when using it. Thank you! 🙏  
+🛠️ Tech Stack
+This portfolio was built using a modern and powerful set of technologies:
 
----
+Frontend:
+React: For building the user interface.
+Vite: As the blazing-fast build tool and development server.
+Tailwind CSS: For all styling and creating the custom theme.
+Material-UI (MUI): Used for the tabbed interface in the portfolio section.
+Framer Motion: For the welcome screen and other complex animations.
+Lucide React: For clean and modern icons.
 
-# Tutorial: Running the Project  
+Backend & Database:
+Supabase: Used for the entire backend, including:
+PostgreSQL Database: To store projects, certificates, experience, and comments.
+Storage: To host project images, certificate images, and user-uploaded profile photos.
+Realtime: To power the live-updating comment section.
 
-Here’s a simple guide to run this project.  
+Other Tools:
 
-## Prerequisites  
-
-Ensure that you have already installed:  
-- **Node.js**  
-
----
-
-## Steps to Run the Project  
-
-1. **Download this project:**  
-
-   ```bash  
-   git clone https://github.com/EkiZR/Portofolio_V5.git  
-   ```  
-
-2. **Install all dependencies:**  
-
-   ```bash  
-   npm install  
-   ```  
-   Or use:  
-
-   ```bash  
-   npm install --legacy-peer-deps  
-   ```  
-
-3. **Run the project:**  
-
-   ```bash  
-   npm run dev  
-   ```  
-
-4. **Open in browser:**  
-
-   Access the application through the link displayed in your terminal.  
-
----
-
-## Creating a Production Build  
-
-To create a production-ready build:  
-
-1. Run the build command:  
-
-   ```bash  
-   npm run build  
-   ```  
-
-2. The build files will be saved in the `dist` folder. You can upload this folder to your hosting server.  
-
----
-
-## Notes  
-
-If you encounter issues while running the project, ensure that:  
-- Node.js is correctly installed.  
-- You’re in the correct project directory.  
-- All dependencies are installed without errors.  
-
----
-
-## Firebase Configuration  
-
-To configure Firebase for this project, follow these steps:  
-
-1. **Add Firebase to the Project:**  
-   - Go to the [Firebase Console](https://console.firebase.google.com/).  
-   - Create a new project or use an existing one.  
-
-2. **Enable Firestore Database:**  
-   - Create a database.  
-
-3. **Go to Project Settings:**  
-   - Click the settings icon.  
-   - Copy the Firebase configuration.  
-
-4. **Go to Rules:**  
-   - Set the rules to `true`.  
-
-5. **Adjust the Collection Structure:**  
-   - Set up the collections as shown in the following images:  
-
-   ![Collection Structure Example 1](https://github.com/user-attachments/assets/38580122-08a4-4499-a8fd-0f253652a239)  
-   ![Collection Structure Example 2](https://github.com/user-attachments/assets/d563d7ad-f1ab-46ff-8185-640dcebd0363)  
-
-6. **Update `firebase.js` and `firebase-comment.js` Files:**  
-   - Replace the `firebaseConfig` content with your Firebase configuration.  
-
+FormSubmit: To handle the contact form submissions.
+AOS (Animate On Scroll): For scroll-triggered animations.
