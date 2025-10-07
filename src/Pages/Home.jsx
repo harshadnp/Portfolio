@@ -15,7 +15,7 @@ import "aos/dist/aos.css";
 
 const StatusBadge = memo(() => (
     <div
-      className="inline-block animate-float lg:mx-0"
+      className="inline-block animate-float"
       data-aos="zoom-in"
       data-aos-delay="400"
     >
@@ -33,7 +33,7 @@ const StatusBadge = memo(() => (
   
   const MainTitle = memo(() => (
     <div className="space-y-2" data-aos="fade-up" data-aos-delay="600">
-      <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
+      <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold tracking-tight">
         <span className="relative inline-block">
           <span className="absolute -inset-2 bg-gradient-to-r from-cyan-600 to-blue-600 blur-2xl opacity-20"></span>
           <span className="relative bg-gradient-to-r from-white via-slate-200 to-slate-300 bg-clip-text text-transparent">
@@ -53,9 +53,9 @@ const StatusBadge = memo(() => (
   
   const CTAButton = memo(({ href, text, icon: Icon }) => (
     <a href={href}>
-      <button className="group relative w-[160px]">
+      <button className="group relative w-full sm:w-[160px]">
         <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl opacity-50 blur-md group-hover:opacity-90 transition-all duration-700"></div>
-        <div className="relative h-11 bg-slate-800 backdrop-blur-xl rounded-lg border border-white/10 leading-none overflow-hidden">
+        <div className="relative h-12 bg-slate-800 backdrop-blur-xl rounded-lg border border-white/10 leading-none overflow-hidden">
           <div className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 bg-gradient-to-r from-cyan-500/10 to-blue-500/10"></div>
           <span className="absolute inset-0 flex items-center justify-center gap-2 text-sm group-hover:gap-3 transition-all duration-300">
             <span className="bg-gradient-to-r from-gray-200 to-white bg-clip-text text-transparent font-medium z-10">
@@ -159,19 +159,20 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 overflow-hidden" id="Home">
+    <div className="min-h-screen bg-slate-900 overflow-x-hidden" id="Home">
       <div
         className={`relative z-10 transition-opacity duration-1000 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
         <div className="container mx-auto px-6 lg:px-8 min-h-screen">
-          {/* UPDATED: Main layout now uses a robust CSS Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center justify-center min-h-screen gap-12 lg:gap-20">
+          {/* Main layout now uses flexbox with specific mobile ordering */}
+          <div className="flex flex-col lg:flex-row items-center justify-center min-h-screen gap-12 lg:gap-20">
             
             {/* --- Left Column (Text Content) --- */}
+            {/* On mobile, this content will be ordered first */}
             <div
-              className="space-y-8 text-center lg:text-left"
+              className="flex flex-col items-center lg:items-start space-y-8 text-center lg:text-left order-1 lg:pt-0 pt-24"
               data-aos="fade-right"
               data-aos-delay="200"
             >
@@ -201,7 +202,7 @@ const Home = () => {
 
               {/* CTA Buttons */}
               <div
-                className="flex flex-row gap-4 w-full justify-center lg:justify-start"
+                className="flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start"
                 data-aos="fade-up"
                 data-aos-delay="1200"
               >
@@ -225,16 +226,17 @@ const Home = () => {
               </div>
             </div>
 
-            {/* --- UPDATED: Right Column (Lottie Animation) --- */}
+            {/* --- Right Column (Lottie Animation) --- */}
+            {/* On mobile, this will be ordered second, appearing below the text */}
             <div
-              className="w-full h-full relative flex items-center justify-center"
+              className="w-full h-auto lg:h-full relative flex items-center justify-center order-2"
               onMouseEnter={() => setIsHovering(true)}
               onMouseLeave={() => setIsHovering(false)}
               data-aos="fade-left"
               data-aos-delay="400"
             >
-                {/* This container constrains the animation and prevents overflow bugs */}
-                <div className="relative w-[500px] h-[500px] max-w-full max-h-full">
+                {/* Constrained animation container */}
+                <div className="relative w-full max-w-[500px] aspect-square">
                     <div
                     className={`absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-blue-600/10 rounded-full blur-3xl transition-all duration-700 ease-in-out ${
                         isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
